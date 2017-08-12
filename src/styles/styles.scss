@@ -1,0 +1,140 @@
+@import "./normalize";
+
+@mixin font-face($family,$src,$weight: normal,$style: normal) {
+  @font-face {
+      font-family : $family;
+      src         : url('#{$src}.ttf') format('truetype');
+      font-style  : $style;
+      font-weight : $weight;
+  }
+}
+@mixin font-woff($family,$src,$weight: normal,$style: normal) {
+  @font-face {
+      font-family : $family;
+      src         : url('#{$src}.woff') format('woff');
+      font-style  : $style;
+      font-weight : $weight;
+  }
+}
+/* Variables */
+$Fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+// Colors 
+$gunMetal: #30343f;
+$aeroBlue: #cbf3f0;
+$roseEbony: #60463b;
+$righBlack: #00120b;
+$white: #ffffff;
+
+/* Styles */
+html {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #525252;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-family: $Fonts !important;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: "liga", "kern";
+	overflow-x: hidden;
+}
+* {
+  outline: none;
+	box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+picture {
+	display: block;
+	line-height: 0;
+}
+img, iframe {
+	max-width: 100%;
+	margin: 0 auto;
+}
+.noteApp {
+  .__re-bulma_hero-body {
+    align-items: flex-start !important;
+  }
+  position: relative;
+  .sidebar {
+    .container {
+      padding: 1rem;
+    }
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: $gunMetal;
+    color: $white !important;
+    
+    &--hero {
+      background-color: transparent;
+    }
+    &__title {
+      color: $white;
+    }
+    &--list {
+      position: relative;
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          padding: 0 1rem;
+          // cursor: pointer;
+          &:hover {
+            background: rgba($righBlack, 0.15);
+          }
+        }
+      }
+    }
+    &--actions {
+      position: absolute;
+      right: .4rem;
+      top: .4rem;
+      div {
+        display: inline-block;
+        margin: 0 .5rem;
+      }
+      i {
+        cursor: pointer;
+      }
+    }
+  }
+  .noteform {
+    &--body {
+      padding: 1rem;
+    }
+    &--nav {
+      padding: 0 1rem;
+      &__item {
+        padding: 0;
+      }
+    }
+    &--title {
+      input {
+        font-size: 1.618rem;
+        // box-shadow: none;
+        // border: 0;
+        border-radius: 0;
+        height: 50px;
+      }
+    }
+  }
+  .nothingToShow {
+    text-align: center;
+    font-size: 2.618rem;
+  }
+}
+
+
+
+.hidden {
+  display: none;
+}
+
