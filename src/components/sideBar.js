@@ -1,10 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { Container, Title, Hero, HeroBody, Button,HeroHead, Input } from 're-bulma';
+import { connect } from 'react-redux';
+import { Container, Hero, HeroBody, Button,HeroHead, Input } from 're-bulma';
 import NoteList from './NoteList';
+import FontAwesome from 'react-fontawesome';
+import { addNote } from '../actions/noteActions';
 
 class SideBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this._addNote = this._addNote.bind(this);
+  }
+  _addNote() {
+    this.props.dispatch(addNote());
+  }
   render(){
     const ContainerStyle = {padding: '1rem'};
     return(
@@ -12,9 +21,8 @@ class SideBar extends React.Component {
         <Hero size="isFullheight" className="sidebar--hero">
           <HeroHead>
             <Container style={ContainerStyle}>
-              <Title className="sidebar__title">Note App</Title>
+              <Button onClick={this._addNote} className="sidebar--add">Add new <FontAwesome name="plus" /></Button>
               <Input type="text" placeholder="Search ..." />
-              <Button>Add new</Button>
             </Container>
           </HeroHead>
           <HeroBody>
@@ -30,7 +38,8 @@ class SideBar extends React.Component {
 
 SideBar.propTypes = {
   actions: PropTypes.object,
-  items: PropTypes.array
+  items: PropTypes.array,
+  dispatch: PropTypes.func
 };
 
-export default SideBar;
+export default connect()(SideBar);

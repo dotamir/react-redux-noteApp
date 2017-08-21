@@ -7,16 +7,17 @@ export function fetchNotes() {
   };
 }
 
-export function addNote(id, text, title, date) {
+export function addNote() {
   return (dispatch) => {
     dispatch({
       type: types.ADD_NOTE,
       note: {
-        id,
-        text,
-        title,
-        date,
-      },
+        id: Date.now(),
+        title: 'New note',
+        text: '',
+        dateCreated: Date.now(),
+        dateModified: null
+      }
     });
   };
 }

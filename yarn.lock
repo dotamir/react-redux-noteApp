@@ -3483,6 +3483,14 @@ inquirer@^3.0.6:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
+insert-css@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/insert-css/-/insert-css-2.0.0.tgz#eb5d1097b7542f4c79ea3060d3aee07d053880f4"
+
+insert-css@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/insert-css/-/insert-css-0.2.0.tgz#d15789971662d9899c28977fb6220d5381d2451a"
+
 interpret@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.3.tgz#cbc35c62eeee73f19ab7b10a801511401afc0f90"
@@ -3801,7 +3809,7 @@ jest-changed-files@^20.0.3:
   version "20.0.3"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-20.0.3.tgz#9394d5cc65c438406149bef1bf4d52b68e03e3f8"
 
-jest-cli@^20.0.4:
+jest-cli@20.0.4, jest-cli@^20.0.4:
   version "20.0.4"
   resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-20.0.4.tgz#e532b19d88ae5bc6c417e8b0593a6fe954b1dc93"
   dependencies:
@@ -5522,6 +5530,12 @@ prop-types@15.5.10, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6,
     fbjs "^0.8.9"
     loose-envify "^1.3.1"
 
+properties-parser@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/properties-parser/-/properties-parser-0.3.1.tgz#1316e9539ffbfd93845e369b211022abd478771a"
+  dependencies:
+    string.prototype.codepointat "^0.2.0"
+
 proxy-addr@~1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-1.1.4.tgz#27e545f6960a44a627d9b44467e35c1b6b4ce2f3"
@@ -5619,6 +5633,13 @@ rc@^1.1.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+re-bulma@0.4.5:
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/re-bulma/-/re-bulma-0.4.5.tgz#baa1a36b455d9f3807eb8ef4181c5fb307d21d3a"
+  dependencies:
+    insert-css "^0.2.0"
+    properties-parser "^0.3.1"
 
 react-deep-force-update@^1.0.0:
   version "1.0.1"
@@ -6501,6 +6522,10 @@ string-width@^2.1.0:
   dependencies:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
+
+string.prototype.codepointat@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/string.prototype.codepointat/-/string.prototype.codepointat-0.2.0.tgz#6b26e9bd3afcaa7be3b4269b526de1b82000ac78"
 
 string.prototype.padend@^3.0.0:
   version "3.0.0"

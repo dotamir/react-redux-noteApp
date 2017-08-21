@@ -15,19 +15,18 @@ class NoteList extends React.Component {
     return(
       <div className="sidebar--list">
         <ul>
-          {item.map(({id, text, title}) => {
+          {item.map(({id, title}) => {
             return(
               <li key={id}>
-                <h2>{title}</h2>
+                <h2>{title.length > 10 ? title.substr(0,10) + ' ...' : title}</h2>
                 <div className="sidebar--actions">
                   <div>
-                    <i className="fa fa-trash fa-lg"></i>
+                    {/* <i className="fa fa-trash fa-lg"></i> */}
                   </div>
                   <div>
                     <i data-key={id} onClick={this._SelectNote} className="fa fa-pencil fa-lg"></i>
                   </div>
                 </div>
-                <p>{text.length > 30 ? text.substr(0,30) + ' ...' : text}</p>
               </li>
             );
           })}

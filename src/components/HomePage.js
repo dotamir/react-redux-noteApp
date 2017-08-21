@@ -19,7 +19,7 @@ export class HomePage extends React.Component {
     return (
       <div>
         <Columns className="noteApp">
-          <Column style={style} size="isOneQuarter">
+          <Column style={style} size="is2">
             <SideBar items={this.props.notes} actions={this.props.actions} />
           </Column>
           <Column style={style}>

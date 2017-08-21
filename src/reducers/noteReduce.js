@@ -12,9 +12,19 @@ export default function fetchNote(state = initialState, action) {
     case DEACTIVE_NOTE:
       return {...state, selectedNote: action.selectedNote};
     case UPDATE_NOTE:
-      return {...state, notes: state.notes.map(note => {
-        return note.id === action.note.id ? note = action.note : false ;
-      })};
+      let newSubState = state.notes.map(note => {
+        if(note.id !== action.note.id) {
+          return note;
+        }
+        return {
+          ...note,
+          title: action.note.title,
+          text: action.note.text,
+          dateCreated: action.note.dateCreated,
+          dateModified: action.note.dateModified,
+        };
+      });
+      return {...state, notes: newSubState};
     case ADD_NOTE:
       return {...state, notes: state.notes.concat(action.note) };
     case SELECT_NOTE:
